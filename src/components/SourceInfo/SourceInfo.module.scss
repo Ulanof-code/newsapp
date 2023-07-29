@@ -1,0 +1,26 @@
+.root {
+	display: flex;
+	align-items: center;
+}
+
+.logo {
+	width: 30px;
+	height: 30px;
+	border-radius: 30px;
+	margin-right: 10px;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 14px;
+}
+
+.sourceDetails {
+	display: flex;
+	flex-direction: column;
+}
+
+.sourceTitle {
+	font-size: 12px;
+	opacity: 0.6;
+}
