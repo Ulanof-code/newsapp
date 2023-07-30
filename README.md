@@ -15,7 +15,7 @@ React News App - это простое приложение, использую�
 
 1. Клонируйте этот репозиторий:
     ```bash
-    git clone git@github.com:Ulanof-code/newsapp
+    git clone git@github.com:Ulanof-code/newsapp.git
     ```
 2. Перейдите в директорию проекта:
     ```bash
