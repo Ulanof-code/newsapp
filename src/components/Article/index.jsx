@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 
 import { SourceInfo } from '../SourceInfo';
 import styles from './Article.module.scss';
-import { ArticleSkeleton } from './ArticleSkeleton';
 
 export const Article = React.memo(
 	({
@@ -19,11 +18,9 @@ export const Article = React.memo(
 		tags,
 		url,
 		children,
-		isLoading,
 	}) => {
-		if (isLoading) {
-			return <ArticleSkeleton />;
-		}
+		if (title === 'Can banks push Bitcoin to clean up its act?')
+			console.log('==================');
 
 		return (
 			<div className={styles.root}>
@@ -72,5 +69,8 @@ export const Article = React.memo(
 				</div>
 			</div>
 		);
+	},
+	(prevProps, nextProps) => {
+		return prevProps.id === nextProps.id;
 	}
 );

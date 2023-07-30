@@ -53,41 +53,39 @@ export const Home = () => {
 						hasMore={hasMore}
 						loader={<ArticleSkeleton isLoading />}
 						endMessage={
-							<p style={{ textAlign: 'center' }}>
+							<div style={{ textAlign: 'center' }}>
 								{error ? (
-									<Typography variant='span' color='error'>
+									<Typography variant='h3' color='error'>
 										{error}
 									</Typography>
 								) : (
-									<b>Конец списка новостей</b>
+									<Typography variant='h3' color='black'>
+										Конец списка новостей
+									</Typography>
 								)}
-							</p>
+							</div>
 						}
 					>
-						{(isNewsLoading ? [...Array(5)] : news).map((article, index) =>
-							isNewsLoading ? (
-								<Article key={index} isLoading={true} />
-							) : (
-								<Article
-									key={index}
-									url={article.url}
-									title={article.title}
-									urlToImage={article.urlToImage}
-									description={article.description}
-									source={{
-										logoUrl:
-											'https://res.cloudinary.com/practicaldev/image/fetch/s--uigxYVRB--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/187971/a5359a24-b652-46be-8898-2c5df32aa6e0.png',
-										sourceTitle: article.source.name,
-										author: article.author,
-									}}
-									publishedAt={article.publishedAt}
-									viewsCount={150}
-									commentsCount={3}
-									tags={['Mock1', 'Mock2', 'Mock3']}
-									isLoading={false}
-								/>
-							)
-						)}
+						{news.map((article, index) => (
+							<Article
+								id={index}
+								key={index}
+								url={article.url}
+								title={article.title}
+								urlToImage={article.urlToImage}
+								description={article.description}
+								source={{
+									logoUrl:
+										'https://res.cloudinary.com/practicaldev/image/fetch/s--uigxYVRB--/c_fill,f_auto,fl_progressive,h_50,q_auto,w_50/https://dev-to-uploads.s3.amazonaws.com/uploads/user/profile_image/187971/a5359a24-b652-46be-8898-2c5df32aa6e0.png',
+									sourceTitle: article.source.name,
+									author: article.author,
+								}}
+								publishedAt={article.publishedAt}
+								viewsCount={150}
+								commentsCount={3}
+								tags={['Mock1', 'Mock2', 'Mock3']}
+							/>
+						))}
 					</InfiniteScroll>
 				</Grid>
 				<Grid xs={4} item>

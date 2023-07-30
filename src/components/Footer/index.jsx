@@ -6,7 +6,7 @@ import styles from './Footer.module.scss';
 export const Footer = () => {
 	return (
 		<div className={styles.root}>
-			<Box sx={{ py: 3, mt: 5 }}>
+			<Box sx={{ py: 1, mt: 1 }}>
 				<Container maxWidth='lg'>
 					<Typography variant='body1' color='white' align='center'>
 						News Today © 2023
